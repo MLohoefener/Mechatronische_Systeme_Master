@@ -3,16 +3,16 @@
 % Substitute of PID_RE35.mdl
 % 12.11.2018, Manfred Lohöfener HoMe Merseburg
 
-clear, close all
-s = tf('s');
-load Maxon_Control.mat
+  clear, close all
+  s = tf('s');
+  load Maxon_Control.mat
 
-% Input:
+%% Input:
 % contr_param   % [Ki Kp Kd Kii]
 % Sys           % ss (A3, B3, C3, D3);
 % K_G           % [m] Gear with 1 m/s for nom. speed
 
-% Signals:
+%% Signals:
 % r_set(t)  % [m] Setpoint
 % y(t)      % [m] Position
 % w(t)      % [rad/s] Speed, angle velocity
@@ -21,33 +21,27 @@ load Maxon_Control.mat
 % F_z(t)    % [N] Force as disturbance 
 
 %% System
-Sys = ss (A3, B3, C3, D3);
-Sys.InputName  = {'u' 'F_z'};  
-Sys.OutputName = {'y' 'w' 'i'};
+  Sys = ss (A3, B3, C3, D3);
+  Sys.InputName  = {'u' 'F_z'};  
+  Sys.OutputName = {'y' 'w' 'i'};
 
 %% Controller
-Contr = [Ki/s -Ki/s-Kp -Kd -Kii];
-Contr.InputName  = {'r_set' 'y' 'w' 'i'};
-Contr.OutputName = 'u';
+  Contr = [Ki/s -Ki/s-Kp -Kd -Kii];
+  Contr.InputName  = {'r_set' 'y' 'w' 'i'};
+  Contr.OutputName = 'u';
 
 %% Closed loop system
-Total = connect (Sys, Contr, {'r_set' 'F_z'}, {'y' 'w' 'i' 'u'});
-%step (Total, 0:0.0001:0.1)
-%step (Total, 0:0.0001:0.3)
-%step (Total, 0:0.0001:1)
-step (Total, 0:0.001:1.5)
-%step (Total, 0:0.0001:3)
+  Total = connect (Sys, Contr, {'r_set' 'F_z'}, {'y' 'w' 'i' 'u'});
+  t_end = 1.5;            % Simulationsende
+  t_x   = 0:0.001:t_end;  % Zeitachse
+  figure 1
+    step (Total, t_x)     % Sprungantwort
+    print (gcf, [mfilename '-step' num2str(domp)], '-dsvg');
+  figure 2
+    ramp (Total, t_x)     % Rampen-Anstiegsantwort
+    print (gcf, [mfilename '-ramp' num2str(domp)], '-dsvg');
 
-print (gcf, [mfilename '-step' num2str(domp)], '-dsvg');
-
-%if checkrel < 5
-%      print (gcf, [mfilename '-step' num2str(domp)], '-depsc2');  % Octave
-%      print (gcf, [mfilename '-step' num2str(domp)], '-dsvg');  % Octave
-%%      print (gcf, [mfilename '-step' num2str(domp)], '-demf');    % Octave
-%  else
-%      print (gcf, [mfilename '-step' num2str(domp)], '-dsvg');    % MATLAB
-%end
- %% Test
- disp Polstellen
- disp (pole (Total))
+%% Test
+  disp Polstellen
+  disp (pole (Total))
  
