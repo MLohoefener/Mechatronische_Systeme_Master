@@ -7,9 +7,10 @@
 1. MATLAB® und Control Systems Toolbox für M-Skripte bzw. Funktionen
 2. MATLAB® und Simulink® für SLX-Blockdiagramme
 3. https://www.octave.org und `pkg install -forge control symbolic; pkg load control symbolic` für M-Skripte bzw. Funktionen
-4. https://www.scilab.org/ für Scilab-Skripte SCE oder Scilab-Funktionen SCI bzw. XCOS- oder ZCOS-Blockdiagramme
-5. http://wxmaxima.sourceforge.net für wxMaxima-Batch-Dateien WXM
 
 **Datei**|**Beschreibung**
 ---|---
-**Maxon_Control_BD.m**|Scilab-Skript zur PID-Parameteroptimierung im Zustandsraum mit Polvorgabe
+**Maxon_Control_BD.m**|MATLAB-Skript zur PID-Parameteroptimierung für einen Maxon-Motor im Zustandsraum mit Polvorgabe
+**Maxon_feedback.m**|MATLAB-Skript zur Regelkreis-Simulation mit einem Maxon-Motor und PID-Kaskadenregler
+**pole-place.m**|MATLAB-Funktion zur Parameterberechnung im Zustandsraum mit Polvorgabe
+**ifmember.m**|MATLAB-Funktion als Ersatz für die Funktion ismember
