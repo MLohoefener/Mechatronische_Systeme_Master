@@ -3,8 +3,7 @@
 % Substitute of PID_RE35.mdl
 % 12.11.2018, Manfred Lohöfener HoMe Merseburg
 
-clear
-close all
+clear, close all
 s = tf('s');
 load Maxon_Control.mat
 
