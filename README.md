@@ -12,7 +12,6 @@
 ---|---
 **Maxon_Control_BD.m**|MATLAB-Skript zur PID-Parameteroptimierung für einen Maxon-Motor im Zustandsraum mit Polvorgabe
 **Maxon_feedback.m**|MATLAB-Skript zur Regelkreis-Simulation mit einem Maxon-Motor und PID-Kaskadenregler
-**pole-place.m**|MATLAB-Funktion zur Parameterberechnung im Zustandsraum mit Polvorgabe
-**ifmember.m**|MATLAB-Funktion als Ersatz für die Funktion ismember
 **PID_RE35.slx**|Simulink-Blockdiagramm zur Regelkreis-Simulation mit einem Maxon-Motor und PID-Kaskadenregler
 **ifmember.m**|MATLAB-Funktion als Ersatz für die Funktion ismember
+**pole-place.m**|MATLAB-Funktion zur Parameterberechnung im Zustandsraum mit Polvorgabe
