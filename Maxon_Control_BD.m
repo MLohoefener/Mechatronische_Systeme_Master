@@ -69,7 +69,7 @@ domp = -150;                            % to be tuned manually
 %domp = -5;                              % to be tuned manually
 format short eng
   contr_param = pole_place (sys, domp); % Parameters Ki Kp Kd Kii
-  disp 'Parameters'
+  disp 'Parameters Ki Kp Kd Kii'
   disp (contr_param)
 format
 Ki = contr_param (1);
@@ -77,5 +77,5 @@ Kp = contr_param (2);
 Kd = contr_param (3);
 Kii= contr_param (4);
 save Maxon_Control.mat domp Ki Kp Kd Kii A3 B3 C3 D3
-% Continue with Block Diagram PID_RE35.mdl / PID_RE35.slx
+% Continue with Block Diagram PID_RE35.slx or script Maxon_feedback.m
 % or with Maxon_feedback.m
