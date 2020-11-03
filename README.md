@@ -6,7 +6,8 @@
 
 1. MATLAB® und Control Systems Toolbox für M-Skripte bzw. Funktionen
 2. MATLAB® und Simulink® für SLX-Blockdiagramme
-3. https://www.octave.org und `pkg install -forge control symbolic; pkg load control symbolic` für M-Skripte bzw. Funktionen
+3. https://www.scilab.org/ für Scilab-Skripte SCE oder Scilab-Funktionen SCI bzw. XCOS- oder ZCOS-Blockdiagramme
+4. https://www.octave.org und `pkg install -forge control symbolic; pkg load control symbolic` für M-Skripte bzw. Funktionen
 
 **Datei**|**Beschreibung**
 ---|---
