@@ -11,7 +11,7 @@
 **Datei**|**Beschreibung**
 ---|---
 **DC_contr_ZN.m**|MATLAB-Skript zur PID-Parameteroptimierung für einen Maxon-Motor nach Ziegler-Nichols
-**DC_mot.zcos**|Scilab/Scicos-Blockdiagramm eines Maxon-Motors
+**DC_mot.zcos**|Scilab/Scicos-Blockdiagramm zur Modellierung einens Maxon-Motors
 **DC_mot_TF.m**|MATLAB-Skript zur Modellierung einens Maxon-Motors
 **Maxon_Control_BD.m**|MATLAB-Skript zur PID-Parameteroptimierung für einen Maxon-Motor im Zustandsraum mit Polvorgabe
 **Maxon_feedback.m**|MATLAB-Skript zur Regelkreis-Simulation mit einem Maxon-Motor und PID-Kaskadenregler
