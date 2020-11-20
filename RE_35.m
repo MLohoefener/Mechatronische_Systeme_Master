@@ -18,14 +18,25 @@
     Ki  = 0;             % 1/s    
     Td = 0;             % s
     T_crit= 7.8e-3;     % s
-% Optimized
+% Optimized by Ziegler-Nichols
     Kp = 0.6*k_crit;    % V/rad
     Ki  = 2/T_crit;      % 1/s
     Td = T_crit/8;      % s
     N  = 10e3;          % by experiment
+%     N  = 100;          % default
+% PID-Tuner by MATLAB/Simulink
+%     Kp = 0.0117;
+%     Ki = 0.0155;
+%     Td = 0.5100;
+%     N = 3;
+% Tuning by DC-contr_ZN.m
+    Kp = 165.6;         % Danger! Kp > k_crit!!!
+    Ki = 1/7.8e-003;
+    Td = 1.95e-003;
+    N = 10000;
 %% Simulation
     T_e = 0.08;         % [s] stop time
     D_t = 0.1e-3;       % [s] step size 0.1 ms
     t_x = 0:D_t:T_e;    % [s] time axis
-%     plot (sim('RE35.slx', t_x))
-    plot (sim('RE35_2019a.slx', t_x))
+    plot (sim('RE35.slx', t_x))         % ML 2020a
+%     plot (sim('RE35_2019a.slx', t_x)) % ML 2019a
